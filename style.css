@@ -13,7 +13,7 @@ html{
 
 body{
     align-items: center;
-    background: linear-gradient(225deg, #eb92be, #ffef78, #63c9b4);
+    background: linear-gradient(225deg,rgb(241, 147, 76),rgb(190, 18, 18),rgb(208, 237, 231));
     display: flex;
     font-family: 'Dosis', sans-serif;
     font-display: swap;
