@@ -31,6 +31,7 @@ function handlesymbol(symbol){
             runningTotal = 0;
             pre_ans = "";
             positive = true;
+            decimal = false;
             break;
         
         case "=":
@@ -52,6 +53,7 @@ function handlesymbol(symbol){
                     previousOperator = null;
                 }
                 buffer = "0";
+                decimal = false;
             }
             else if(buffer.slice(-1) === "."){
                 decimal = false;
@@ -107,6 +109,7 @@ function handleMath(symbol){
     pre_ans = runningTotal + symbol;
     buffer = "0";
     positive = true;
+    decimal = false;
 }
 
 function flushOperation(intBuffer){
