@@ -41,7 +41,7 @@ function handlesymbol(symbol){
             flushOperation(parseFloat(buffer));
             previousOperator = null;
             pre_ans += buffer + " =";
-            buffer = runningTotal;
+            buffer = runningTotal.toString();
             runningTotal = 0;
             break;
 
@@ -146,12 +146,12 @@ function handlenumber(numberString){
 
 function handlenegative(){
     if (buffer !== "0") {
-        if (positive) {
-            buffer = "-" + buffer;
+        if (positive && !(buffer.includes("-"))) {
+            buffer = parseFloat("-" + buffer);
             positive = false;
         }
         else{
-            buffer = buffer.substring(1, buffer.length);
+            buffer = (buffer.toString()).substring(1, buffer.length);
             positive = true;
         }
     }
