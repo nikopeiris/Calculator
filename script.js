@@ -59,6 +59,9 @@ function handlesymbol(symbol){
                 decimal = false;
                 buffer = buffer.substring(0, buffer.length - 1);
             }
+            else if("=".includes(pre_ans.slice(-1))){
+                return;
+            }
             else{
                 buffer = buffer.substring(0, buffer.length - 1);
             }
