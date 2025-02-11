@@ -59,9 +59,6 @@ function handlesymbol(symbol){
                 decimal = false;
                 buffer = buffer.substring(0, buffer.length - 1);
             }
-            else if("=".includes(pre_ans.slice(-1))){
-                return;
-            }
             else{
                 buffer = buffer.substring(0, buffer.length - 1);
             }
@@ -150,11 +147,11 @@ function handlenumber(numberString){
 function handlenegative(){
     if (buffer !== "0") {
         if (!(buffer.toString().includes("-"))) {
-            buffer = parseFloat("-" + buffer);
+            buffer = parseFloat("-" + buffer).toString();
             positive = false;
         }
         else{
-            buffer = parseFloat((buffer.toString()).substring(1, buffer.length));
+            buffer = parseFloat((buffer.toString()).substring(1, buffer.length)).toString();
             positive = true;
         }
     }
